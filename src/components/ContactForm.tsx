@@ -84,66 +84,66 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="premium-card p-8 md:p-12 h-full">
-      <h3 className="text-xl text-shine font-elegant mb-6">Send Us a Message</h3>
+    <div className="premium-card p-8 md:p-12 h-full shadow-lg shadow-black/20 backdrop-blur-md">
+      <h3 className="text-2xl text-shine font-elegant mb-8 font-light">Send Us a Message</h3>
       
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="space-y-1">
+      <form onSubmit={handleSubmit} className="space-y-7">
+        <div className="space-y-1.5">
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             placeholder="Your Name"
-            className="elegant-input w-full"
+            className="elegant-input w-full py-3"
           />
           {errors.name && (
-            <p className="text-red-400 text-xs flex items-center gap-1 mt-1">
+            <p className="text-red-400 text-xs flex items-center gap-1 mt-1.5">
               <AlertCircle size={12} />
               {errors.name}
             </p>
           )}
         </div>
         
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             placeholder="Your Email"
-            className="elegant-input w-full"
+            className="elegant-input w-full py-3"
           />
           {errors.email && (
-            <p className="text-red-400 text-xs flex items-center gap-1 mt-1">
+            <p className="text-red-400 text-xs flex items-center gap-1 mt-1.5">
               <AlertCircle size={12} />
               {errors.email}
             </p>
           )}
         </div>
         
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <input
             type="tel"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
             placeholder="Your Phone (Optional)"
-            className="elegant-input w-full"
+            className="elegant-input w-full py-3"
           />
         </div>
         
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
             placeholder="Your Message"
             rows={5}
-            className="elegant-input w-full resize-none"
+            className="elegant-input w-full resize-none py-3"
           />
           {errors.message && (
-            <p className="text-red-400 text-xs flex items-center gap-1 mt-1">
+            <p className="text-red-400 text-xs flex items-center gap-1 mt-1.5">
               <AlertCircle size={12} />
               {errors.message}
             </p>
@@ -153,10 +153,11 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`elegant-button w-full mt-8 ${isSubmitting ? 'cursor-wait' : ''}`}
+          className={`elegant-button w-full mt-10 py-3.5 uppercase tracking-wider ${isSubmitting ? 'cursor-wait' : ''}`}
+          style={{ letterSpacing: '0.1em' }}
         >
           {isSubmitting ? (
-            <span className="flex items-center gap-2">
+            <span className="flex items-center justify-center gap-2">
               <span className="h-4 w-4 border-2 border-elitist-gold/30 border-t-elitist-gold rounded-full animate-spin"></span>
               Sending...
             </span>
