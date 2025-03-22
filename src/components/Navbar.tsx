@@ -36,15 +36,16 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out-expo px-6 md:px-12 ${
-        isScrolled ? 'py-4 bg-elitist-dark-accent/95 backdrop-blur-md shadow-md shadow-black/10' : 'py-6 bg-transparent'
+        isScrolled ? 'py-4 bg-[#1C1C1C]/95 backdrop-blur-md shadow-md shadow-black/10' : 'py-6 bg-transparent'
       }`}
     >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center" onClick={closeMobileMenu}>
+        <Link to="/" className="flex items-center opacity-0" onClick={closeMobileMenu} style={{ animation: 'fadeIn 0.8s ease-out forwards' }}>
           <img 
-            src="/lovable-uploads/6e5291cd-9e45-42cc-b7d3-683612efddb3.png" 
+            src="/lovable-uploads/c87673ce-1ddd-4237-99f5-cbdead5700ad.png" 
             alt="Elitist Links Logo" 
-            className="h-10 w-auto"
+            className="h-10 w-auto transition-transform duration-300 hover:scale-105"
+            style={{ backgroundColor: '#1C1C1C' }}
           />
         </Link>
 
@@ -52,15 +53,15 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-10">
           <Link 
             to="/" 
-            className={`elegant-link text-sm uppercase tracking-wider ${isActive('/') ? 'after:scale-x-100' : ''}`}
-            style={{ letterSpacing: '0.1em' }}
+            className={`elegant-link text-sm uppercase tracking-wider opacity-0 ${isActive('/') ? 'after:scale-x-100' : ''}`}
+            style={{ letterSpacing: '0.1em', animation: 'fadeIn 0.8s ease-out 0.2s forwards' }}
           >
             Home
           </Link>
           <Link 
             to="/contact" 
-            className={`elegant-link text-sm uppercase tracking-wider ${isActive('/contact') ? 'after:scale-x-100' : ''}`}
-            style={{ letterSpacing: '0.1em' }}
+            className={`elegant-link text-sm uppercase tracking-wider opacity-0 ${isActive('/contact') ? 'after:scale-x-100' : ''}`}
+            style={{ letterSpacing: '0.1em', animation: 'fadeIn 0.8s ease-out 0.4s forwards' }}
           >
             Contact
           </Link>
@@ -68,9 +69,10 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-elitist-gold" 
+          className="md:hidden text-[#D9BB62] opacity-0" 
           onClick={toggleMobileMenu}
           aria-label="Toggle Menu"
+          style={{ animation: 'fadeIn 0.8s ease-out 0.4s forwards' }}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -78,7 +80,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`fixed inset-0 bg-elitist-dark-accent/98 backdrop-blur-md z-40 pt-24 px-6 md:hidden transition-transform duration-500 ease-out-expo ${
+        className={`fixed inset-0 bg-[#1C1C1C]/98 backdrop-blur-md z-40 pt-24 px-6 md:hidden transition-transform duration-500 ease-out-expo ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

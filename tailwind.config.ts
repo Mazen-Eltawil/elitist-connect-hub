@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,11 +63,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				elitist: {
-					gold: "#D4AF37",
-					"gold-light": "#E5C767",
-					"gold-dark": "#A38A28",
+					gold: "#D9BB62",
+					"gold-light": "#E5CB7C",
+					"gold-dark": "#B69A43",
 					dark: "#333333",
-					"dark-accent": "#1A1A1A",
+					"dark-accent": "#1C1C1C",
 					light: "#F6F6F7",
 					"light-accent": "#ECECEC"
 				}
@@ -153,6 +152,32 @@ export default {
 					'100%': {
 						backgroundPosition: '-200% 0%'
 					}
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'fadeInUp': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 15px 0 rgba(217, 187, 98, 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 25px 5px rgba(217, 187, 98, 0.7)'
+					}
 				}
 			},
 			animation: {
@@ -163,18 +188,22 @@ export default {
 				'gentle-pulse': 'gentle-pulse 3s infinite ease-in-out',
 				'border-glow': 'border-glow 2s infinite ease-in-out',
 				'slide-up': 'slide-up 0.8s ease-out',
-				'background-shine': 'background-shine 2s linear infinite'
+				'background-shine': 'background-shine 2s linear infinite',
+				'shimmer': 'shimmer 5s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'fadeInUp': 'fadeInUp 1.2s ease-out forwards',
+				'glow': 'glow 3s ease-in-out infinite'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #E5C767 50%, #D4AF37 100%)',
+				'gold-gradient': 'linear-gradient(135deg, #D9BB62 0%, #E5CB7C 50%, #D9BB62 100%)',
 				'dark-gradient': 'linear-gradient(135deg, #1A1A1A 0%, #333333 100%)',
 				'shine': 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)'
 			},
 			boxShadow: {
 				'elegant': '0 10px 30px -10px rgba(0, 0, 0, 0.1)',
 				'elegant-sm': '0 8px 20px -10px rgba(0, 0, 0, 0.1)',
-				'gold': '0 10px 30px -10px rgba(212, 175, 55, 0.3)'
+				'gold': '0 10px 30px -10px rgba(217, 187, 98, 0.3)'
 			},
 			transitionTimingFunction: {
 				'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',

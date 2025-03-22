@@ -95,7 +95,7 @@
   }
 
   body {
-    @apply bg-elitist-dark text-elitist-light font-sans;
+    @apply bg-[#1C1C1C] text-elitist-light font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -105,27 +105,47 @@
 
 @layer components {
   .elegant-input {
-    @apply bg-transparent border-b border-elitist-gold/70 px-3 py-2 focus:border-elitist-gold focus:outline-none transition-all duration-300 text-elitist-light placeholder:text-elitist-light/50;
+    @apply bg-transparent border-b border-[#D9BB62]/70 px-3 py-2 focus:border-[#D9BB62] focus:outline-none transition-all duration-300 text-elitist-light placeholder:text-elitist-light/50;
   }
 
   .elegant-button {
-    @apply relative px-8 py-3 overflow-hidden bg-transparent border border-elitist-gold text-elitist-gold hover:text-elitist-dark-accent transition-colors duration-300 ease-out-expo flex items-center justify-center;
+    @apply relative px-8 py-3 overflow-hidden bg-transparent border border-[#D9BB62] text-[#D9BB62] hover:text-[#1C1C1C] transition-colors duration-300 ease-out-expo flex items-center justify-center;
   }
 
   .elegant-button::before {
-    @apply content-[''] absolute top-0 left-0 w-full h-0 bg-elitist-gold transition-all duration-300 ease-out-expo z-[-1];
+    @apply content-[''] absolute top-0 left-0 w-full h-0 bg-[#D9BB62] transition-all duration-300 ease-out-expo z-[-1];
   }
 
   .elegant-button:hover::before {
     @apply h-full;
   }
 
+  .luxury-button {
+    @apply relative font-medium text-[#D9BB62] border border-[#D9BB62] transition-all duration-500 ease-out-expo;
+    background: linear-gradient(to right, transparent 50%, #D9BB62 50%);
+    background-size: 200% 100%;
+    background-position: 0 0;
+  }
+
+  .luxury-button:hover {
+    background-position: -100% 0;
+    @apply text-[#1C1C1C];
+  }
+
+  .luxury-button::before {
+    @apply content-[''] absolute w-0 h-0.5 bg-[#D9BB62] bottom-0 left-0 transition-all duration-500 ease-out-expo;
+  }
+
+  .luxury-button:hover::before {
+    @apply w-full;
+  }
+
   .elegant-link {
-    @apply relative inline-block text-elitist-gold no-underline overflow-hidden;
+    @apply relative inline-block text-[#D9BB62] no-underline overflow-hidden;
   }
   
   .elegant-link::after {
-    @apply content-[''] absolute w-full h-0.5 bg-elitist-gold left-0 bottom-0 transform scale-x-0 origin-bottom-right transition-transform duration-300 ease-out-expo;
+    @apply content-[''] absolute w-full h-0.5 bg-[#D9BB62] left-0 bottom-0 transform scale-x-0 origin-bottom-right transition-transform duration-300 ease-out-expo;
   }
   
   .elegant-link:hover::after {
@@ -137,10 +157,54 @@
   }
 
   .premium-card {
-    @apply backdrop-blur-md bg-black/20 border border-elitist-gold/20 rounded-sm overflow-hidden;
+    @apply backdrop-blur-md bg-black/20 border border-[#D9BB62]/20 rounded-sm overflow-hidden;
   }
 
   .text-shine {
     @apply bg-gold-gradient text-transparent bg-clip-text;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 15px 0 rgba(217, 187, 98, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px 5px rgba(217, 187, 98, 0.7);
   }
 }
